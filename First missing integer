@@ -1,0 +1,40 @@
+"""
+Problem Description
+
+Given an unsorted integer array A of size N. Find the first missing positive integer.
+
+Note: Your algorithm should run in O(n) time and use constant space.
+"""
+
+i = input()
+a = []
+for x in i:
+  a.append(int(x))
+
+a = sorted(A)
+
+loc = 0
+nothing_missing = True
+
+if 1 not in a:
+    nothing_missing = False
+    return 1
+else:
+
+    for i in a:
+        if i > 0:
+            loc = a.index(i)
+            break
+
+    for x in range(loc, len(a) - 1):
+        if a[x] + 1 == a[x + 1] or a[x] == a[x + 1]:
+            nothing_missing
+            pass
+        else:
+            res = (a[x] + 1)
+            return res
+            break
+
+if nothing_missing:
+    res = (a[-1] + 1)
+    print (res)
