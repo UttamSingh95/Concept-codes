@@ -1,0 +1,30 @@
+"""
+Problem Description
+You are given an integer A in decimal (base 10).
+Return a string denoting the binary (base 2) form of the integer A.
+"""
+"""
+explanation link: https://www.youtube.com/watch?v=rsxT4FfRBaM
+"""
+
+
+
+def binary_converter():
+    num = int(input())          # taking input
+    b_list = []                 # list to store binary values
+    while num != 0:
+        if num % 2 == 0:
+            b_list.append("0")
+            num = num // 2
+        else:
+            b_list.append("1")
+            num = num // 2
+    # print(b_list)
+    ans = ''                    # variable to store the reversed list as a string
+    for x in b_list[::-1]:      # reversing the list
+        ans = ans + x           # adding the list item in string
+    print(ans)
+
+
+binary_converter()          # calling the function
+
