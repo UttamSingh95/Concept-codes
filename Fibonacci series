@@ -1,0 +1,7 @@
+fib = [0, 1, 1, 2]
+A = int(input())
+for x in range(4, A + 1):
+    new_number = fib[int(x) - 1] + fib[int(x) - 2]
+    fib.append(new_number)
+print(fib)
+print(fib[A])
