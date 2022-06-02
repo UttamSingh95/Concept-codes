@@ -1,0 +1,32 @@
+"""
+Problem Description
+
+Given an integer A, find and return the Ath magic number.
+
+A magic number is defined as a number which can be expressed as a power of 5 or sum of unique powers of 5.
+
+First few magic numbers are 5, 25, 30(5 + 25), 125, 130(125 + 5), ….
+
+"""
+
+
+def magic_number(A):
+    num = A
+    b_list = []
+    while num != 0:
+        if num % 2 == 0:
+            b_list.append("0")
+            num = num // 2
+        else:
+            b_list.append("1")
+            num = num // 2
+    # print(b_list)
+    ans = 0
+    for x in range(0,len(b_list)):
+        if b_list[x] == "1":
+            ans = ans + 5**(int(x)+1)
+    return (ans)
+
+A = int(input())
+
+print(magic_number(A))
